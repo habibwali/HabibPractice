@@ -1,0 +1,81 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+dist
+tmp
+out-tsc
+
+# dependencies
+node_modules
+
+documentation
+
+# IDE - VSCode
+.vscode/*
+**/.vscode
+*/*.vscode
+**/.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+package-lock.json
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Aa]ngular/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+*.log
+
+
+# Visual Studio 2015
+.vs/
+
+.sonarqube/
+coverage.opencover.xml
+
+WORKING_WITH_APIS_FROM_LOCAL.patch
+
+**/lcov.info
+
+**/SCS/angular.json
+
+/Development/Utility/RemoveAllCacheKeys/packages
