@@ -11,6 +11,8 @@ namespace HabPracticeConsoleApp.LongestContinuousSubArray
         public IEnumerable<T> FindLongestSubArray<T>(T[] array1, T[] array2)
         {
             if (array1 == null || array2 == null) return Enumerable.Empty<T>();
+            int max = 0;
+            (int, int) maxPosition = (0, 0);
             int[,] result = new int[array1.Length + 1, array2.Length + 1];
             for (int i = 0; i < array1.Length; i++)
             {
@@ -19,6 +21,11 @@ namespace HabPracticeConsoleApp.LongestContinuousSubArray
                     if (array1[i].Equals(array2[j]))
                     {
                         result[i + 1, j + 1] = result[i, j] + 1;
+                        if (result[i + 1, j + 1] > max)
+                        {
+                            max = result[i + 1, j + 1];
+                            maxPosition = (i + 1, j + 1);
+                        }
                     }
                     else
                     {
@@ -26,18 +33,8 @@ namespace HabPracticeConsoleApp.LongestContinuousSubArray
                     }
                 }
             }
-            int maxNumber = result.Cast<int>().Max();
-            if (maxNumber <= 0) return Enumerable.Empty<T>();
-            (int, int) maxPosition = (0, 0);
-            for (int i = 0; i < result.GetLength(0); i++)
-                for (int j = 0; j < result.GetLength(1); j++)
-                {
-                    if (result[i, j] == maxNumber)
-                    {
-                        maxPosition = (i, j);
-                    }
-                }
 
+            if (max <= 0) return Enumerable.Empty<T>();
             List<T> list = new List<T>();
 
             for (int i = Math.Min(maxPosition.Item1, maxPosition.Item2); i >= 0; i--)
