@@ -27,6 +27,7 @@ namespace HabPracticeConsoleApp.LongestContinuousSubArray
                 }
             }
             int maxNumber = result.Cast<int>().Max();
+            if (maxNumber <= 0) return Enumerable.Empty<T>();
             (int, int) maxPosition = (0, 0);
             for (int i = 0; i < result.GetLength(0); i++)
                 for (int j = 0; j < result.GetLength(1); j++)
